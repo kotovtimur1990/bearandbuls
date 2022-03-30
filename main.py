@@ -4,7 +4,7 @@ from telebot import types
 import logging
 from flask import Flask, request
 bot = telebot.TeleBot ('5267048474:AAFWZRQqCwIuZ15123123PzJkj3OR8BiGVH8KEXrM')
-APP_URL = "https://bearandbuls.herokuapp.com/" + bot
+APP_URL = "https://bearandbuls.herokuapp.com/" + "5267048474:AAFWZRQqCwIuZ15123123PzJkj3OR8BiGVH8KEXrM"
 
 bot = telebot.TeleBot(bot)
 server = Flask(__name__)
