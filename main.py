@@ -2,6 +2,8 @@ import os
 import telebot
 import logging
 from flask import Flask, request
+BOT_TOKEN = "5267048474:AAGWGYRMKk9Ab4pAs9TGrTa2QjZjCsAx9QM"
+APP_URL = "https://bearandbuls.herokuapp.com/" + BOT_TOKEN
 
 bot = telebot.TeleBot(BOT_TOKEN)
 server = Flask(__name__)
