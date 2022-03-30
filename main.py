@@ -10,8 +10,8 @@ logger.setLevel(logging.DEBUG)
 
 @bot.message.hendler(commands=["start"])
 def start(message):
-    fasdfusername = message.from.user.username
-    bot.reply_to(message, f"Hello", {username})
+    username = message.from_user.username
+    bot.reply_to(message, f"Hello, {username}!")
 
 @server.route(f"/{BOT_TOKEN}", methods=["POST"])
 def redirect_message():
@@ -21,7 +21,7 @@ def redirect_message():
     return "!", 200
 
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     bot.remove.webhook()
     bot.set_webhook(url=APP_URL)
     server.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
