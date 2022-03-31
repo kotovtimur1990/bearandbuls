@@ -1,3 +1,3 @@
 BOT_TOKEN = "5267048474:AAGWGYRMKk9Ab4pAs9TGrTa2QjZjCsAx9QM"
 APP_URL = "https://bearandbuls.herokuapp.com/" + BOT_TOKEN
-DB_URI = "postgres://puituzgmngqiwh:9b4f079c0766513bd92150923a63bb17c1d3505460b059396fcb8d0599757aa2@ec2-54-78-211-131.eu-west-1.compute.amazonaws.com:5432/dcrqes2g6amhmi"
+DB_URI = "postgres://evzafimcndjodp:ccf25baab38dc8b65292ecc7a389ca8584f466198a48a6d779f9fa0fb6d45e27@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d9pofjotqjelp3"
