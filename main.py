@@ -149,7 +149,7 @@ def callback(call):
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id,
                                       text='SUCCESFULL AR FAILED')
         elif call.data == 'menu1':
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+            markup_reply = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
             one = types.KeyboardButton('Start receiving Forex trading signals')
             two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
             sport = types.KeyboardButton('Start receiving sports betting')
