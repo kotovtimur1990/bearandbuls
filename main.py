@@ -26,121 +26,121 @@ def update_messages_count(user_id):
 #    username = message.from_user.username
 #    bot.reply_to(message, f"Hello, {username}!")
 
-    @bot.message_handler(content_types=['start'])
-    def start(message):
+@bot.message_handler(commands=['start'])
+def start(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+    one = types.KeyboardButton('Start receiving Forex trading signals')
+    two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
+    three = types.KeyboardButton('Information')
+    markup.row(one)
+    markup.row(two)
+    markup.row(three)
+    bot.send_message(message.chat.id, "Choose one of the following", reply_markup=markup)
+
+@bot.message_handler(content_types=['text'])
+def Information(message):
+    if message.text == "Information":
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        menu = types.KeyboardButton('Меню')
-        moizakazi = types.KeyboardButton('Моизаказы')
-        ostavit_otziv = types.KeyboardButton('Оставитьотзыв')
-        Nastroiki = types.KeyboardButton('Настройки')
-        markup.row(menu)
-        markup.row(moizakazi)
-        markup.row(ostavit_otziv, Nastroiki)
-        bot.send_message(message.chat.id, "Выберите одно из следующих", reply_markup=markup)
+        Registration = types.KeyboardButton('Registration')
+        Back = types.KeyboardButton('Back')
+        markup.row(Registration)
+        markup.row(Back)
+        bot.send_message(message.from_user.id, "Forex and Cryptocurrency Signals.\n"
+                                                "Extreme pips \n"
+                                                "✅VIP Forex Signals \n"
+                                                "✅VIP Cryptocurrency \n"
+                                                "Signals +3000 points of estimated profit per month in the channel \n"
+                                                "Join us and earn on Forex and Cryptocurrency \n"
+                                                "Signals are available after registration and payment. \n"
+                                                "Payment is only $2 per week.", reply_markup=markup)
+    elif message.text == "Back":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        one = types.KeyboardButton('Start receiving Forex trading signals')
+        two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
+        three = types.KeyboardButton('Information')
+        markup.row(one)
+        markup.row(two)
+        markup.row(three)
+        bot.send_message(message.chat.id, "Choose one of the following", reply_markup=markup)
+    elif message.text == "Registration":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
+        Back = types.KeyboardButton('Main menu')
+        markup.row(lokaciya)
+        markup.row(Back)
+        bot.send_message(message.from_user.id, "Submit your locality to determine the payment instrument for you", reply_markup=markup)
+    elif message.text == "Start receiving Forex trading signals":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
+        Back = types.KeyboardButton('Main menu')
+        markup.row(lokaciya)
+        markup.row(Back)
+        bot.send_message(message.from_user.id, "Submit your locality to determine the payment instrument for you", reply_markup=markup)
+    elif message.text == "Start receiving Cryptocurrency trading signals":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
+        Back = types.KeyboardButton('Main menu')
+        markup.row(lokaciya)
+        markup.row(Back)
+        bot.send_message(message.from_user.id, "Submit your locality to determine the payment instrument for you", reply_markup=markup)
+    elif message.text == "Main menu":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        one = types.KeyboardButton('Start receiving Forex trading signals')
+        two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
+        three = types.KeyboardButton('Information')
+        markup.row(one)
+        markup.row(two)
+        markup.row(three)
+        bot.send_message(message.chat.id, "Choose one of the following", reply_markup=markup)
+    elif message.text == "NO":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
+        Back = types.KeyboardButton('Main menu')
+        markup.row(lokaciya)
+        markup.row(Back)
+        bot.send_message(message.from_user.id, "Submit your locality to determine the payment instrument for you", reply_markup=markup)
+    elif message.text == "YES":
+        markup = types.ReplyKeyboardRemove(selective=False)
+        bot.send_message(message.chat.id, ' Pay to start earning ', reply_markup=markup)
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        PAY = types.InlineKeyboardButton('PAY', callback_data='pay1', url='www.google.com')
+        menu1 = types.InlineKeyboardButton('Main menu', callback_data='menu1')
+        markup_inline.add(PAY, menu1)
+        bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
 
-    @bot.message_handler(content_types=['text'])
-    def Меню(message):
-        if message.text == "Меню":
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            lokaciya = types.KeyboardButton(text="Отправить местоположение", request_location=True)
-            moiadresa = types.KeyboardButton('Мои адреса')
-            nazad = types.KeyboardButton('Назад.')
-            markup.row(lokaciya)
-            markup.row(moiadresa, nazad)
-            bot.send_message(message.from_user.id, "Отправьте свою геопозицию", reply_markup=markup)
+@bot.callback_query_handler(func=lambda call: True)
+def callback(call):
+    if call.message:
+        if call.data == 'pay1':
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id,
+                                      text='SUCCESFULL AR FAILED')
+        elif call.data == 'menu1':
+            markup_reply = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+            one = types.KeyboardButton('Start receiving Forex trading signals')
+            two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
+            three = types.KeyboardButton('Information')
+            markup_reply.add(one)
+            markup_reply.add(two)
+            markup_reply.add(three)
+            bot.send_message(call.message.chat.id, "Choose one of the following", reply_markup=markup_reply)
 
-        elif message.text == "Нет":
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            lokaciya = types.KeyboardButton(text="Отправить местоположение", request_location=True)
-            moiadresa = types.KeyboardButton('Мои адреса')
-            nazad = types.KeyboardButton('Назад.')
-            markup.row(lokaciya)
-            markup.row(moiadresa, nazad)
-            bot.send_message(message.from_user.id, "Отправьте свою геопозицию", reply_markup=markup)
-        elif message.text == "Да":
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            Set = types.KeyboardButton('Сет')
-            Lavash = types.KeyboardButton('Лаваш')
-            Shaurma = types.KeyboardButton('Шаурма')
-            Donar = types.KeyboardButton('Донар')
-            Burger = types.KeyboardButton('Бургер')
-            Hotdog = types.KeyboardButton('Хот-дог')
-            Deserti = types.KeyboardButton('Десерты')
-            Napitki = types.KeyboardButton('Напитки')
-            Garnir = types.KeyboardButton('Гарнир')
-            Korzina = types.KeyboardButton('Корзина')
-            Nazad = types.KeyboardButton('Назад')
-            markup.row(Set, Lavash)
-            markup.row(Shaurma, Donar)
-            markup.row(Burger, Hotdog)
-            markup.row(Burger, Hotdog)
-            markup.row(Deserti, Napitki)
-            markup.row(Garnir)
-            markup.row(Korzina, Nazad)
-            bot.send_message(message.from_user.id, "Выберите категорию", reply_markup=markup)
-        elif message.text == "Назад":
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            lokaciya = types.KeyboardButton(text="Отправить местоположение", request_location=True)
-            moiadresa = types.KeyboardButton('Мои адреса')
-            nazad = types.KeyboardButton('Назад.')
-            markup.row(lokaciya)
-            markup.row(moiadresa, nazad)
-            bot.send_message(message.from_user.id, "Отправьте свою геопозицию", reply_markup=markup)
-        elif message.text == "Назад.":
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            menu = types.KeyboardButton('Меню')
-            moizakazi = types.KeyboardButton('Моизаказы')
-            ostavit_otziv = types.KeyboardButton('Оставитьотзыв')
-            Nastroiki = types.KeyboardButton('Настройки')
-            markup.row(menu)
-            markup.row(moizakazi)
-            markup.row(ostavit_otziv, Nastroiki)
-            bot.send_message(message.chat.id, "Выберите одно из следующих", reply_markup=markup)
-        elif message.text == "Моизаказы":
-            bot.send_message(message.from_user.id,
-                             "Номер заказа: 6197454 Статус: Заказ передан клиенту - API Адрес: Узбекистан, Ташкент, Юнусабадский район, махалля Отчопар-2 1️⃣ ✖️ Пепси 1,5л 1️⃣ ✖️ FITTER 1️⃣ ✖️ Калампир лаваш куриный 2️⃣ ✖️ Донар Тип оплаты: Payme Товары: 128 000 сум Доставка: 9 000 сум Итого: 137 000 сум")
-        elif message.text == "Оставитьотзыв":
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            nazad = types.KeyboardButton('Назад.')
-            markup.row(nazad)
-            bot.send_message(message.from_user.id, "Отправьте ваши отзывы", reply_markup=markup)
-        elif message.text == "Настройки":
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            izmeniyyazik = types.KeyboardButton('Изменить язык')
-            markup.row(izmeniyyazik)
-            bot.send_message(message.from_user.id, "Выберите действие:", reply_markup=markup)
-        else:
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            menu = types.KeyboardButton('Меню')
-            moizakazi = types.KeyboardButton('Моизаказы')
-            ostavit_otziv = types.KeyboardButton('Оставитьотзыв')
-            Nastroiki = types.KeyboardButton('Настройки')
-            markup.row(menu)
-            markup.row(moizakazi)
-            markup.row(ostavit_otziv, Nastroiki)
-            bot.send_message(message.chat.id, "Выберите одно из следующих", reply_markup=markup)
+@bot.message_handler(content_types=['location'])
+def location(message):
+    if message.location is not None:
+        coord = str(message.location.longitude) + ',' + str(message.location.latitude)
+        r = requests.get('https://geocode-maps.yandex.ru/1.x/?apikey=4dd7cd0a-35ca-45bc-ac71-fb8f2a9903d3&kind=locality&format=json&lang=en_US&geocode=' + coord)
+        if len(r.json()['response']['GeoObjectCollection']['featureMember']) > 0:
+            address = \
+            r.json()['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty']['GeocoderMetaData']['text']
+            markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True, row_width=1)
+            YES = types.KeyboardButton('YES')
+            NO = types.KeyboardButton('NO')
+            markup.row(YES, NO)
+            bot.send_message(message.chat.id, 'Your locality:\n{} Do you confirm this ?'.format(address), reply_markup=markup)
+            # types.ReplyKeyboardRemove(selective=False)
 
-    @bot.message_handler(content_types=['location'])
-    def location(message):
-        if message.location is not None:
-            coord = str(message.location.longitude) + ',' + str(message.location.latitude)
-            r = requests.get(
-                'https://geocode-maps.yandex.ru/1.x/?apikey=4dd7cd0a-35ca-45bc-ac71-fb8f2a9903d3&format=json&geocode=' + coord)
-            if len(r.json()['response']['GeoObjectCollection']['featureMember']) > 0:
-                address = \
-                r.json()['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty'][
-                    'GeocoderMetaData']['text']
-                markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-                DA = types.KeyboardButton('Да')
-                NET = types.KeyboardButton('Нет')
-                markup.row(DA, NET)
-                bot.send_message(message.chat.id,
-                                 'Адрес, по которому вы хотите заказать:\n{} Вы подтверждаете этот адрес?'.format(
-                                     address), reply_markup=markup)
-            else:
-                bot.send_message(message.chat.id, 'Не удалось получить Ваш адрес')
-
-    bot.polling(none_stop=True)
+    else:
+        bot.send_message(message.chat.id, 'Failed to get your address')
 
     # БАЗА ДАННЫХ
     db_object.execute(f"SELECT id FROM users WHERE id = {user_id}")
