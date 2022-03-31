@@ -120,8 +120,7 @@ def Information(message):
 def callback(call):
     if call.message:
         if call.data == 'pay1':
-            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id,
-                                      text='SUCCESFULL AR FAILED')
+            bot.edit_message_text(chat_id=call.message.chat.id, url = "https://pay.web.money/136707824153/5jxsRXI")
         elif call.data == 'menu1':
             markup_reply = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
             one = types.KeyboardButton('Start receiving Forex trading signals')
