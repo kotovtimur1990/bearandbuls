@@ -4,6 +4,7 @@ import logging
 import psycopg2 #База данных
 from config import *
 from flask import Flask, request
+import types
 
 bot = telebot.TeleBot(BOT_TOKEN)
 server = Flask(__name__)
