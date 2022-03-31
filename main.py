@@ -5,8 +5,13 @@ import psycopg2 #База данных
 from config import *
 from flask import Flask, request
 from telebot import types
-from telebot import ReplyKeyboardMarkup, ReplyKeyboardRemove
 
+
+
+class LIST:
+    def __init__(self, msg):
+        self.msg = msg
+        self.del_pr = None
 
 bot = telebot.TeleBot(BOT_TOKEN)
 server = Flask(__name__)
