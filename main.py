@@ -5,7 +5,7 @@ import psycopg2 #База данных
 from config import *
 from flask import Flask, request
 from telebot import types
-
+import requests
 
 
 class LIST:
