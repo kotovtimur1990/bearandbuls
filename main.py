@@ -160,7 +160,7 @@ def callback(call):
             markup.row(sport)
             markup.row(robot)
             markup.row(three)
-            bot.send_message(message.chat.id, "Choose one of the following", reply_markup=markup)
+            bot.send_message(call.message.chat.id, "Choose one of the following", reply_markup=markup_reply)
 
 @bot.message_handler(content_types=['location'])
 def location(message):
