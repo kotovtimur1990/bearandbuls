@@ -111,7 +111,7 @@ def Information(message):
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, ' Pay to start earning ', reply_markup=markup)
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
-        PAY = types.InlineKeyboardButton('PAY', callback_data='pay1', url='www.google.com')
+        PAY = types.InlineKeyboardButton('PAY', callback_data='pay1', url='https://pay.web.money/136707824153/5jxsRXI')
         menu1 = types.InlineKeyboardButton('Main menu', callback_data='menu1')
         markup_inline.add(PAY, menu1)
         bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
@@ -120,7 +120,8 @@ def Information(message):
 def callback(call):
     if call.message:
         if call.data == 'pay1':
-            bot.edit_message_text(chat_id=call.message.chat.id, url = "https://pay.web.money/136707824153/5jxsRXI")
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id,
+                                      text='SUCCESFULL AR FAILED')
         elif call.data == 'menu1':
             markup_reply = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
             one = types.KeyboardButton('Start receiving Forex trading signals')
