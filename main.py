@@ -4,7 +4,8 @@ import logging
 import psycopg2 #База данных
 from config import *
 from flask import Flask, request
-import types
+from telebot import types
+from telebot import ReplyKeyboardMarkup, ReplyKeyboardRemove
 
 
 bot = telebot.TeleBot(BOT_TOKEN)
