@@ -1,6 +1,4 @@
 pyTelegramBotAPI
 flask
 psycopg2
-ReplyKeyboardMarkup
-ReplyKeyboardRemove
 types
