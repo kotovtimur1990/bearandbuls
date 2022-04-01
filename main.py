@@ -137,7 +137,7 @@ def Information(message):
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, ' Pay to start earning ', reply_markup=markup)
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
-        PAY = types.InlineKeyboardButton('PAY', callback_data='pay1', url='https://pay.web.money/136707824153/7t6mIOM')
+        PAY = types.InlineKeyboardButton('PAY', callback_data='pay1', url='https://paywall.pw/j4xyb8z1mbdl')
         menu1 = types.InlineKeyboardButton('Main menu', callback_data='menu1')
         markup_inline.add(PAY, menu1)
         bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
