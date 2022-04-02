@@ -186,25 +186,25 @@ def chek_callback_data(callback):
         Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/j4xyb31zvxdl')
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(Join1, Back)
-        bot.send_message(callback.message.chat.id, "111111111111", reply_markup=markup_inline)
+        bot.send_message(callback.message.chat.id, "Our team uses a variety of trading methods and provides quality signals that are carefully thought out and carry the least risk. In our channel, we give from 3 to 6 signals per day, the success rate of which is more than 85%, and our monthly goal is above 2000 points.✅✅✅", reply_markup=markup_inline)
     elif callback.data == 'INFO2':
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/7e6vmbgl1pdg')
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(Join1, Back)
-        bot.send_message(callback.message.chat.id, "22222222222222222", reply_markup=markup_inline)
+        bot.send_message(callback.message.chat.id, "We offer cryptocurrency trading signals that will help you generate and bring good income by trading a wide range of instrument categories. Our team has qualified financiers/traders who analyze the market and provide signals especially for you. In our channel, we give from 3 to 5 signals per day, the success of which is more than 90% ✅✅✅", reply_markup=markup_inline)
     elif callback.data == 'INFO3':
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/y3xjpy1jl464')
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(Join1, Back)
-        bot.send_message(callback.message.chat.id, "3333333333333333", reply_markup=markup_inline)
+        bot.send_message(callback.message.chat.id, "For the quality of the signals provided, we have gathered the best privateers in our team. Our Privateers are professional forecasters and cover a large number of events, carefully analyzing each and giving their own recommendations. This approach brings very good results.", reply_markup=markup_inline)
     elif callback.data == 'INFO4':
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/8k6mlzrmqjdo')
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(Join1, Back)
-        bot.send_message(callback.message.chat.id, "44444444444444", reply_markup=markup_inline)
+        bot.send_message(callback.message.chat.id, "The best forex robot that is dominating the chart right now. Trading with Dragon Expert's Triangular Pairs Correlation Strategy ensures that you can earn 70%-100%++ Profits Monthly. The most advanced real time algorithm algorithm in EA software. Connect to our channel and download all the necessary files to set up and run the bot.", reply_markup=markup_inline)
 
 
 @bot.message_handler(content_types=['location'])
