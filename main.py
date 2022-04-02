@@ -105,7 +105,7 @@ def Information(message):
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY1, INFO1)
         markup_inline.add(Back)
-        bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
+        bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     elif message.text == "Start receiving Cryptocurrency trading signals":
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
@@ -115,7 +115,7 @@ def Information(message):
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY2, INFO2)
         markup_inline.add(Back)
-        bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
+        bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     elif message.text == "Start receiving sports betting":
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
@@ -125,7 +125,7 @@ def Information(message):
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY3, INFO3)
         markup_inline.add(Back)
-        bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
+        bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     elif message.text == "Get your Forex trading robot":
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
@@ -135,7 +135,7 @@ def Information(message):
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY4, INFO4)
         markup_inline.add(Back)
-        bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
+        bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     #elif message.text == "Return":
     #elif message.text == "Return":
     #elif message.text == "Return":
@@ -182,26 +182,29 @@ def chek_callback_data(callback):
         markup.row(robot)
         bot.send_message(callback.message.chat.id, "Choose how would you like to earn?", reply_markup=markup)
     elif callback.data == 'INFO1':
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        Return1 = types.KeyboardButton('Join a channel')
-        markup.row(Return1)
-        bot.send_message(callback.message.chat.id, "111111111111", url='https://paywall.pw/j4xyb8z1mbdl', reply_markup=markup)
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/j4xyb8z1mbdl')
+        Back = types.InlineKeyboardButton('Back', callback_data='Back')
+        markup_inline.add(Join1, Back)
+        bot.send_message(callback.message.chat.id, "111111111111", reply_markup=markup_inline)
     elif callback.data == 'INFO2':
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        Return2 = types.KeyboardButton('Join a channel')
-        markup.row(Return2)
-        bot.send_message(callback.message.chat.id, "222222222222222222", url='https://paywall.pw/j4xyb8z1mbdl', reply_markup=markup)
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/j4xyb8z1mbdl')
+        Back = types.InlineKeyboardButton('Back', callback_data='Back')
+        markup_inline.add(Join1, Back)
+        bot.send_message(callback.message.chat.id, "22222222222222222", reply_markup=markup_inline)
     elif callback.data == 'INFO3':
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        Return3 = types.KeyboardButton('Join a channel')
-        markup.row(Return3)
-        bot.send_message(callback.message.chat.id, "3333333333333333", url='https://paywall.pw/j4xyb8z1mbdl', reply_markup=markup)
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/j4xyb8z1mbdl')
+        Back = types.InlineKeyboardButton('Back', callback_data='Back')
+        markup_inline.add(Join1, Back)
+        bot.send_message(callback.message.chat.id, "3333333333333333", reply_markup=markup_inline)
     elif callback.data == 'INFO4':
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/j4xyb8z1mbdl')
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(Join1, Back)
-        bot.send_message(callback.message.chat.id, "👇", reply_markup=markup_inline)
+        bot.send_message(callback.message.chat.id, "44444444444444", reply_markup=markup_inline)
 
 
 @bot.message_handler(content_types=['location'])
