@@ -115,6 +115,7 @@ def Information(message):
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY2, INFO2)
         markup_inline.add(Back)
+        bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
     elif message.text == "Start receiving sports betting":
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
@@ -124,6 +125,7 @@ def Information(message):
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY3, INFO3)
         markup_inline.add(Back)
+        bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
     elif message.text == "Get your Forex trading robot":
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
@@ -133,6 +135,7 @@ def Information(message):
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY4, INFO4)
         markup_inline.add(Back)
+        bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
     #elif message.text == "Return":
     #elif message.text == "Return":
     #elif message.text == "Return":
@@ -182,27 +185,27 @@ def callback(call):
             markup.row(two)
             markup.row(sport)
             markup.row(robot)
-            bot.send_message(message.chat.id, "GREAT! \n \nChoose how would you like to earn?", reply_markup=markup)
+            bot.send_message(chat_id=call.message.chat.id, message_id=call.message.id, text="Choose how would you like to earn?", reply_markup=markup)
         elif call.data == 'Info1':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
             Return1 = types.KeyboardButton('Start receiving Forex trading signals')
             markup.row(Return1)
-            bot.send_message(message.chat.id, "11111111111111111")
+            bot.send_message(chat_id=call.message.chat.id, message_id=call.message.id, text="11111111111111111")
         elif call.data == 'Info2':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
             Return2 = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
             markup.row(Return2)
-            bot.send_message(message.chat.id, "222222222222222222")
+            bot.send_message(chat_id=call.message.chat.id, message_id=call.message.id, text="222222222222222222")
         elif call.data == 'Info3':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
             Return3 = types.KeyboardButton('Start receiving sports betting')
             markup.row(Return3)
-            bot.send_message(message.chat.id, "3333333333333333333")
+            bot.send_message(chat_id=call.message.chat.id, message_id=call.message.id, text="3333333333333333333")
         elif call.data == 'Info4':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
             Return4 = types.KeyboardButton('Get your Forex trading robot')
             markup.row(Return4)
-            bot.send_message(message.chat.id, "4444444444444444444")
+            bot.send_message(chat_id=call.message.chat.id, message_id=call.message.id, text="4444444444444444444")
 
 
 @bot.message_handler(content_types=['location'])
