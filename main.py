@@ -181,22 +181,22 @@ def chek_callback_data(callback):
         markup.row(sport)
         markup.row(robot)
         bot.send_message(callback.message.chat.id, "Choose how would you like to earn?", reply_markup=markup)
-    elif callback.data == 'Info1':
+    elif callback.data == 'INFO1':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
         Return1 = types.KeyboardButton('Start receiving Forex trading signals')
         markup.row(Return1)
         bot.send_message(callback.message.chat.id, "111111111111111", reply_markup=markup)
-    elif callback.data == 'Info2':
+    elif callback.data == 'INFO2':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
         Return2 = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
         markup.row(Return2)
         bot.send_message(callback.message.chat.id, "222222222222222", reply_markup=markup)
-    elif callback.data == 'Info3':
+    elif callback.data == 'INFO3':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
         Return3 = types.KeyboardButton('Start receiving sports betting')
         markup.row(Return3)
         bot.send_message(callback.message.chat.id, "33333333333333333", reply_markup=markup)
-    elif callback.data == 'Info4':
+    elif callback.data == 'INFO4':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
         Return4 = types.KeyboardButton('Get your Forex trading robot')
         markup.row(Return4)
