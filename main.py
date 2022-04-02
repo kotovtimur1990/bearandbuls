@@ -170,38 +170,37 @@ def Information(message):
 
 @bot.callback_query_handler(func=lambda callback: callback.data)
 def chek_callback_data(callback):
-    if callback.message:
-        if callback.data == 'Back':
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            one = types.KeyboardButton('Start receiving Forex trading signals')
-            two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
-            sport = types.KeyboardButton('Start receiving sports betting')
-            robot = types.KeyboardButton('Get your Forex trading robot')
-            markup.row(one)
-            markup.row(two)
-            markup.row(sport)
-            markup.row(robot)
-            bot.send_message(chat_id=callback.message.chat.id, message_id=callback.message.id, text="Choose how would you like to earn?", reply_markup=markup)
-        elif callback.data == 'Info1':
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            Return1 = types.KeyboardButton('Start receiving Forex trading signals')
-            markup.row(Return1)
-            bot.send_message(chat_id=callback.message.chat.id, message_id=callback.message.id, text="11111111111111111")
-        elif callback.data == 'Info2':
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            Return2 = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
-            markup.row(Return2)
-            bot.send_message(chat_id=callback.message.chat.id, message_id=callback.message.id, text="222222222222222222")
-        elif callback.data == 'Info3':
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            Return3 = types.KeyboardButton('Start receiving sports betting')
-            markup.row(Return3)
-            bot.send_message(chat_id=callback.message.chat.id, message_id=callback.message.id, text="3333333333333333333")
-        elif callback.data == 'Info4':
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            Return4 = types.KeyboardButton('Get your Forex trading robot')
-            markup.row(Return4)
-            bot.send_message(chat_id=callback.message.chat.id, message_id=callback.message.id, text="4444444444444444444")
+    if callback.data == 'Back':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        one = types.KeyboardButton('Start receiving Forex trading signals')
+        two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
+        sport = types.KeyboardButton('Start receiving sports betting')
+        robot = types.KeyboardButton('Get your Forex trading robot')
+        markup.row(one)
+        markup.row(two)
+        markup.row(sport)
+        markup.row(robot)
+        bot.send_message(callback.message.chat.id, "Choose how would you like to earn?", reply_markup=markup)
+    elif callback.data == 'Info1':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        Return1 = types.KeyboardButton('Start receiving Forex trading signals')
+        markup.row(Return1)
+        bot.send_message(callback.message.chat.id, "111111111111111", reply_markup=markup)
+    elif callback.data == 'Info2':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        Return2 = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
+        markup.row(Return2)
+        bot.send_message(callback.message.chat.id, "222222222222222", reply_markup=markup)
+    elif callback.data == 'Info3':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        Return3 = types.KeyboardButton('Start receiving sports betting')
+        markup.row(Return3)
+        bot.send_message(callback.message.chat.id, "33333333333333333", reply_markup=markup)
+    elif callback.data == 'Info4':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        Return4 = types.KeyboardButton('Get your Forex trading robot')
+        markup.row(Return4)
+        bot.send_message(callback.message.chat.id, "4444444444444444", reply_markup=markup)
 
 
 @bot.message_handler(content_types=['location'])
