@@ -36,18 +36,25 @@ def update_messages_count(user_id):
 
 @bot.message_handler(commands=['start'])
 def start(message):
+    username = message.from_user.username
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-    one = types.KeyboardButton('Start receiving Forex trading signals')
-    two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
-    sport = types.KeyboardButton('Start receiving sports betting')
-    robot = types.KeyboardButton('Get your Forex trading robot')
-    three = types.KeyboardButton('Information')
-    markup.row(one)
-    markup.row(two)
-    markup.row(sport)
-    markup.row(robot)
-    markup.row(three)
-    bot.send_message(message.chat.id, "Choose one of the following", reply_markup=markup)
+    lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
+    markup.row(lokaciya)
+    bot.reply_to(message, f"Hello, {username}!\n Submit your locality to determine the payment instrument for you", reply_markup=markup)
+
+
+    #markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+    #one = types.KeyboardButton('Start receiving Forex trading signals')
+    #two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
+    #sport = types.KeyboardButton('Start receiving sports betting')
+    #robot = types.KeyboardButton('Get your Forex trading robot')
+    #three = types.KeyboardButton('Information')
+    #markup.row(one)
+    #markup.row(two)
+    #markup.row(sport)
+    #markup.row(robot)
+    #markup.row(three)
+    #bot.send_message(message.chat.id, "Choose one of the following", reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def Information(message):
