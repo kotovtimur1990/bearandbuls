@@ -197,10 +197,11 @@ def chek_callback_data(callback):
         markup.row(Return3)
         bot.send_message(callback.message.chat.id, "3333333333333333", url='https://paywall.pw/j4xyb8z1mbdl', reply_markup=markup)
     elif callback.data == 'INFO4':
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        Return4 = types.KeyboardButton('Join a channel')
-        markup.row(Return4)
-        bot.send_message(callback.message.chat.id, "4444444444444444", url='https://paywall.pw/j4xyb8z1mbdl', reply_markup=markup)
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/j4xyb8z1mbdl')
+        Back = types.InlineKeyboardButton('Back', callback_data='Back')
+        markup_inline.add(Join1, Back)
+        bot.send_message(callback.message.chat.id, "👇", reply_markup=markup_inline)
 
 
 @bot.message_handler(content_types=['location'])
