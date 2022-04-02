@@ -183,24 +183,24 @@ def chek_callback_data(callback):
         bot.send_message(callback.message.chat.id, "Choose how would you like to earn?", reply_markup=markup)
     elif callback.data == 'INFO1':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        Return1 = types.KeyboardButton('Start receiving Forex trading signals')
+        Return1 = types.KeyboardButton('Join a channel')
         markup.row(Return1)
-        bot.send_message(callback.message.chat.id, "111111111111111", reply_markup=markup)
+        bot.send_message(callback.message.chat.id, "111111111111", url='https://paywall.pw/j4xyb8z1mbdl', reply_markup=markup)
     elif callback.data == 'INFO2':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        Return2 = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
+        Return2 = types.KeyboardButton('Join a channel')
         markup.row(Return2)
-        bot.send_message(callback.message.chat.id, "222222222222222", reply_markup=markup)
+        bot.send_message(callback.message.chat.id, "222222222222222222", url='https://paywall.pw/j4xyb8z1mbdl', reply_markup=markup)
     elif callback.data == 'INFO3':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        Return3 = types.KeyboardButton('Start receiving sports betting')
+        Return3 = types.KeyboardButton('Join a channel')
         markup.row(Return3)
-        bot.send_message(callback.message.chat.id, "33333333333333333", reply_markup=markup)
+        bot.send_message(callback.message.chat.id, "3333333333333333", url='https://paywall.pw/j4xyb8z1mbdl', reply_markup=markup)
     elif callback.data == 'INFO4':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        Return4 = types.KeyboardButton('Get your Forex trading robot')
+        Return4 = types.KeyboardButton('Join a channel')
         markup.row(Return4)
-        bot.send_message(callback.message.chat.id, "4444444444444444", reply_markup=markup)
+        bot.send_message(callback.message.chat.id, "4444444444444444", url='https://paywall.pw/j4xyb8z1mbdl', reply_markup=markup)
 
 
 @bot.message_handler(content_types=['location'])
