@@ -171,10 +171,7 @@ def Information(message):
 @bot.callback_query_handler(func=lambda callback: callback.data)
 def chek_callback_data(callback):
     if callback.message:
-        if callback.data == 'pay1':
-            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id,
-                                      text='SUCCESFULL AR FAILED')
-        elif callback.data == 'Back':
+        if callback.data == 'Back':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
             one = types.KeyboardButton('Start receiving Forex trading signals')
             two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
