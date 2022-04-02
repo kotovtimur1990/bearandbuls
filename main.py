@@ -80,18 +80,23 @@ def Information(message):
         bot.send_message(message.chat.id, "Choose one of the following", reply_markup=markup)
     elif message.text == "Registration":
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
-        Back = types.KeyboardButton('Main menu')
-        markup.row(lokaciya)
-        markup.row(Back)
-        bot.send_message(message.from_user.id, "Submit your locality to determine the payment instrument for you", reply_markup=markup)
+        one = types.KeyboardButton('Start receiving Forex trading signals')
+        two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
+        sport = types.KeyboardButton('Start receiving sports betting')
+        robot = types.KeyboardButton('Get your Forex trading robot')
+        markup.row(one)
+        markup.row(two)
+        markup.row(sport)
+        markup.row(robot)
+        bot.send_message(message.chat.id, "Choose one of the following", reply_markup=markup)
     elif message.text == "Start receiving Forex trading signals":
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
-        Back = types.KeyboardButton('Main menu')
-        markup.row(lokaciya)
-        markup.row(Back)
-        bot.send_message(message.from_user.id, "Submit your locality to determine the payment instrument for you", reply_markup=markup)
+        markup = types.ReplyKeyboardRemove(selective=False)
+        bot.send_message(message.chat.id, 'Submit your locality to determine the payment instrument for you', reply_markup=markup)
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        lokaciya1 = types.InlineKeyboardButton('Submit your locality', callback_data='lokaciya1', request_location=True)
+        Back1 = types.InlineKeyboardButton('Main menu', callback_data='menu1')
+        markup_inline.add(lokaciya1, Back1)
+        bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
     elif message.text == "Start receiving Cryptocurrency trading signals":
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
         lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
@@ -161,6 +166,10 @@ def callback(call):
             markup_reply.add(robot)
             markup_reply.add(three)
             bot.send_message(call.message.chat.id, "Choose one of the following", reply_markup=markup_reply)
+        elif call.data == 'lokaciya1':
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id,
+                                  text='111111111')
+
 
 @bot.message_handler(content_types=['location'])
 def location(message):
