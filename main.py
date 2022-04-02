@@ -93,7 +93,7 @@ def Information(message):
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, 'Submit your locality to determine the payment instrument for you', reply_markup=markup)
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
-        lokaciya1 = types.InlineKeyboardButton('Submit your locality', callback_data='lokaciya1', request_location=True)
+        lokaciya1 = types.InlineKeyboardButton('Submit your locality', callback_data='lokaciya1')
         Back1 = types.InlineKeyboardButton('Main menu', callback_data='menu1')
         markup_inline.add(lokaciya1, Back1)
         bot.send_message(message.chat.id, "👇", reply_markup=markup_inline)
@@ -168,7 +168,7 @@ def callback(call):
             bot.send_message(call.message.chat.id, "Choose one of the following", reply_markup=markup_reply)
         elif call.data == 'lokaciya1':
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id,
-                                  text='111111111')
+                                  text='111111111', request_location=True)
 
 
 @bot.message_handler(content_types=['location'])
