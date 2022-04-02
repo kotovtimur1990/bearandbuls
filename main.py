@@ -97,8 +97,8 @@ def Information(message):
         #markup.row(robot)
         #bot.send_message(message.chat.id, "Choose one of the following", reply_markup=markup)
     elif message.text == "Start receiving Forex trading signals":
-        markup = types.ReplyKeyboardRemove(selective=False)
-        bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
+        #markup = types.ReplyKeyboardRemove(selective=False)
+        #bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         PAY1 = types.InlineKeyboardButton('PAY', callback_data='PAY1', url='https://paywall.pw/j4xyb8z1mbdl')
         INFO1 = types.InlineKeyboardButton('Information', callback_data='INFO1')
@@ -107,8 +107,8 @@ def Information(message):
         markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     elif message.text == "Start receiving Cryptocurrency trading signals":
-        markup = types.ReplyKeyboardRemove(selective=False)
-        bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
+        #markup = types.ReplyKeyboardRemove(selective=False)
+        #bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         PAY2 = types.InlineKeyboardButton('PAY', callback_data='PAY2', url='https://paywall.pw/j4xyb8z1mbdl')
         INFO2 = types.InlineKeyboardButton('Information', callback_data='INFO2')
@@ -117,8 +117,8 @@ def Information(message):
         markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     elif message.text == "Start receiving sports betting":
-        markup = types.ReplyKeyboardRemove(selective=False)
-        bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
+        #markup = types.ReplyKeyboardRemove(selective=False)
+        #bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         PAY3 = types.InlineKeyboardButton('PAY', callback_data='PAY3', url='https://paywall.pw/j4xyb8z1mbdl')
         INFO3 = types.InlineKeyboardButton('Information', callback_data='INFO3')
@@ -127,8 +127,8 @@ def Information(message):
         markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     elif message.text == "Get your Forex trading robot":
-        markup = types.ReplyKeyboardRemove(selective=False)
-        bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
+        #markup = types.ReplyKeyboardRemove(selective=False)
+        #bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         PAY4 = types.InlineKeyboardButton('PAY', callback_data='PAY4', url='https://paywall.pw/j4xyb8z1mbdl')
         INFO4 = types.InlineKeyboardButton('Information', callback_data='INFO4')
