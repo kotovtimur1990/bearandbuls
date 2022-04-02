@@ -104,7 +104,7 @@ def Information(message):
         INFO1 = types.InlineKeyboardButton('Information', callback_data='INFO1')
         #Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY1, INFO1)
-        markup_inline.add(Back)
+        #markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     elif message.text == "Start receiving Cryptocurrency trading signals":
         #markup = types.ReplyKeyboardRemove(selective=False)
@@ -114,7 +114,7 @@ def Information(message):
         INFO2 = types.InlineKeyboardButton('Information', callback_data='INFO2')
         #Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY2, INFO2)
-        markup_inline.add(Back)
+        #markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     elif message.text == "Start receiving sports betting":
         #markup = types.ReplyKeyboardRemove(selective=False)
@@ -124,7 +124,7 @@ def Information(message):
         INFO3 = types.InlineKeyboardButton('Information', callback_data='INFO3')
         #Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY3, INFO3)
-        markup_inline.add(Back)
+        #markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     elif message.text == "Get your Forex trading robot":
         #markup = types.ReplyKeyboardRemove(selective=False)
@@ -134,7 +134,7 @@ def Information(message):
         INFO4 = types.InlineKeyboardButton('Information', callback_data='INFO4')
         #Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(PAY4, INFO4)
-        markup_inline.add(Back)
+        #markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
     #elif message.text == "Return":
     #elif message.text == "Return":
