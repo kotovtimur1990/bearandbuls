@@ -38,9 +38,11 @@ logger.setLevel(logging.DEBUG)
 def start(message):
     username = message.from_user.username
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-    lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
-    markup.row(lokaciya)
-    bot.reply_to(message, f"Hello, {username}!\n \n \nSubmit your locality to determine the payment instrument for you", reply_markup=markup)
+    RUSSKIY = types.KeyboardButton(text="Русский", request_location=True)
+    ANGLISKIY = types.KeyboardButton(text="English", request_location=True)
+    markup.row(RUSSKIY)
+    markup.row(ANGLISKIY)
+    bot.reply_to(message, f"Hello, {username}!\n \n \n Выберите язык / Choose language", reply_markup=markup)
 
 
     #markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
@@ -106,6 +108,16 @@ def Information(message):
         markup_inline.add(PAY1, INFO1)
         #markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
+    elif message.text == "Начните получать торговые сигналы Forex":
+        #markup = types.ReplyKeyboardRemove(selective=False)
+        #bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        PAY11 = types.InlineKeyboardButton('Оплатить', callback_data='PAY11', url='https://paywall.pw/j4xyb31zvxdl')
+        INFO11 = types.InlineKeyboardButton('Информация', callback_data='INFO11')
+        #Back = types.InlineKeyboardButton('Back', callback_data='Back')
+        markup_inline.add(PAY11, INFO11)
+        #markup_inline.add(Back)
+        bot.send_message(message.chat.id, "Выберите следующее:", reply_markup=markup_inline)
     elif message.text == "Start receiving Cryptocurrency trading signals":
         #markup = types.ReplyKeyboardRemove(selective=False)
         #bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
@@ -116,6 +128,16 @@ def Information(message):
         markup_inline.add(PAY2, INFO2)
         #markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
+    elif message.text == "Начать получать торговые сигналы по криптовалюте":
+        #markup = types.ReplyKeyboardRemove(selective=False)
+        #bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        PAY22 = types.InlineKeyboardButton('Оплатить', callback_data='PAY22', url='https://paywall.pw/7e6vmbgl1pdg')
+        INFO22 = types.InlineKeyboardButton('Информация', callback_data='INFO22')
+        #Back = types.InlineKeyboardButton('Back', callback_data='Back')
+        markup_inline.add(PAY22, INFO22)
+        #markup_inline.add(Back)
+        bot.send_message(message.chat.id, "Выберите следующее:", reply_markup=markup_inline)
     #elif message.text == "Start receiving sports betting":
         #markup = types.ReplyKeyboardRemove(selective=False)
         #bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
@@ -136,17 +158,27 @@ def Information(message):
         markup_inline.add(PAY4, INFO4)
         #markup_inline.add(Back)
         bot.send_message(message.chat.id, "Choose the following", reply_markup=markup_inline)
+    elif message.text == "Получите своего торгового робота Forex":
+        #markup = types.ReplyKeyboardRemove(selective=False)
+        #bot.send_message(message.chat.id, 'Choose the following', reply_markup=markup)
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        PAY44 = types.InlineKeyboardButton('Оплатить', callback_data='PAY44', url='https://paywall.pw/8k6mlzrmqjdo')
+        INFO44 = types.InlineKeyboardButton('Информация', callback_data='INFO44')
+        #Back = types.InlineKeyboardButton('Back', callback_data='Back')
+        markup_inline.add(PAY44, INFO44)
+        #markup_inline.add(Back)
+        bot.send_message(message.chat.id, "Выберите следующее:", reply_markup=markup_inline)
     #elif message.text == "Return":
     #elif message.text == "Return":
     #elif message.text == "Return":
     #elif message.text == "Return":
-    elif message.text == "NO":
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
-        markup.row(lokaciya)
-        bot.reply_to(message, f"Submit your locality to determine the payment instrument for you", reply_markup=markup)
+#    elif message.text == "NO":
+#        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+#        lokaciya = types.KeyboardButton(text="Submit your locality", request_location=True)
+#        markup.row(lokaciya)
+#        bot.reply_to(message, f"Submit your locality to determine the payment instrument for you", reply_markup=markup)
 
-    elif message.text == "YES":
+    elif message.text == "English":
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
         one = types.KeyboardButton('Start receiving Forex trading signals')
         two = types.KeyboardButton('Start receiving Cryptocurrency trading signals')
@@ -156,8 +188,18 @@ def Information(message):
         markup.row(two)
         #markup.row(sport)
         markup.row(robot)
-        bot.send_message(message.chat.id, "GREAT! \n \nChoose how would you like to earn?", reply_markup=markup)
-
+        bot.send_message(message.chat.id, "Choose how would you like to earn?", reply_markup=markup)
+    elif message.text == "Русский":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        one1 = types.KeyboardButton('Начните получать торговые сигналы Forex')
+        two1 = types.KeyboardButton('Начать получать торговые сигналы по криптовалюте')
+        # sport = types.KeyboardButton('Start receiving sports betting')
+        robot1 = types.KeyboardButton('Получите своего торгового робота Forex')
+        markup.row(one1)
+        markup.row(two1)
+        # markup.row(sport)
+        markup.row(robot1)
+        bot.send_message(message.chat.id, "Выберите, как вы хотите зарабатывать?", reply_markup=markup)
 
 
         #markup = types.ReplyKeyboardRemove(selective=False)
@@ -181,18 +223,41 @@ def chek_callback_data(callback):
         #markup.row(sport)
         markup.row(robot)
         bot.send_message(callback.message.chat.id, "Choose how would you like to earn?", reply_markup=markup)
+    elif callback.data == 'back1':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+        one1 = types.KeyboardButton('Начните получать торговые сигналы Forex')
+        two1 = types.KeyboardButton('Начать получать торговые сигналы по криптовалюте')
+        # sport = types.KeyboardButton('Start receiving sports betting')
+        robot1 = types.KeyboardButton('Получите своего торгового робота Forex')
+        markup.row(one1)
+        markup.row(two1)
+        # markup.row(sport)
+        markup.row(robot1)
+        bot.send_message(callback.message.chat.id, "Выберите, как вы хотите зарабатывать?", reply_markup=markup)
     elif callback.data == 'INFO1':
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/j4xyb31zvxdl')
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(Join1, Back)
         bot.send_message(callback.message.chat.id, "Our team uses a variety of trading methods and provides quality signals that are carefully thought out and carry the least risk. In our channel, we give from 3 to 6 signals per day, the success rate of which is more than 85%, and our monthly goal is above 2000 points.✅✅✅", reply_markup=markup_inline)
+    elif callback.data == 'INFO11':
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        Join11 = types.InlineKeyboardButton('Вступить в группу', url='https://paywall.pw/j4xyb31zvxdl')
+        back1 = types.InlineKeyboardButton('Назад', callback_data='back1')
+        markup_inline.add(Join11, back1)
+        bot.send_message(callback.message.chat.id, "Наша команда использует различные методы торговли и предоставляет качественные сигналы, которые тщательно продуманы и несут наименьший риск. В нашем канале мы даем от 3 до 6 сигналов в день, успешность которых составляет более 85%, а наша месячная цель выше 2000 PIPS.✅✅✅", reply_markup=markup_inline)
     elif callback.data == 'INFO2':
         markup_inline = types.InlineKeyboardMarkup(row_width=2)
         Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/7e6vmbgl1pdg')
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(Join1, Back)
         bot.send_message(callback.message.chat.id, "We offer cryptocurrency trading signals that will help you generate and bring good income by trading a wide range of instrument categories. Our team has qualified financiers/traders who analyze the market and provide signals especially for you. In our channel, we give from 3 to 5 signals per day, the success of which is more than 90% ✅✅✅", reply_markup=markup_inline)
+    elif callback.data == 'INFO22':
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        Join11 = types.InlineKeyboardButton('Вступить в группу', url='https://paywall.pw/7e6vmbgl1pdg')
+        back1 = types.InlineKeyboardButton('Назад', callback_data='back1')
+        markup_inline.add(Join11, back1)
+        bot.send_message(callback.message.chat.id, "Мы предлагаем торговые сигналы по криптовалютам, которые помогут Вам получать и приносить хороший доход, торгуя широким спектром категорий инструментов. В нашей команде есть квалифицированные финансисты/трейдеры, которые анализируют рынок и предоставляют сигналы специально для Вас. В нашем канале мы даем от 3 до 5 сигналов в день, успешность которых более 90% ✅✅✅", reply_markup=markup_inline)
     #elif callback.data == 'INFO3':
         #markup_inline = types.InlineKeyboardMarkup(row_width=2)
         #Join1 = types.InlineKeyboardButton('Join a channel', url='https://paywall.pw/y3xjpy1jl464')
@@ -205,25 +270,30 @@ def chek_callback_data(callback):
         Back = types.InlineKeyboardButton('Back', callback_data='Back')
         markup_inline.add(Join1, Back)
         bot.send_message(callback.message.chat.id, "The best forex robot that is dominating the chart right now. Trading with Dragon Expert's Triangular Pairs Correlation Strategy ensures that you can earn 70%-100%++ Profits Monthly. The most advanced real time algorithm algorithm in EA software. Connect to our channel and download all the necessary files to set up and run the bot.", reply_markup=markup_inline)
+    elif callback.data == 'INFO44':
+        markup_inline = types.InlineKeyboardMarkup(row_width=2)
+        Join11 = types.InlineKeyboardButton('Вступить в группу', url='https://paywall.pw/8k6mlzrmqjdo')
+        back1 = types.InlineKeyboardButton('Назад', callback_data='back1')
+        markup_inline.add(Join11, back1)
+        bot.send_message(callback.message.chat.id, "Лучший торговый робот Forex, который сейчас доминирует на рынке. Торговля с использованием стратегии корреляции треугольных пар от Dragon Expert гарантирует, что вы сможете зарабатывать от 70% до 100%++ прибыли в месяц. Самый продвинутый алгоритм реального времени в программном обеспечении EA. Подключайтесь к нашему каналу и скачивайте все необходимые файлы для настройки и запуска бота.", reply_markup=markup_inline
 
-
-@bot.message_handler(content_types=['location'])
-def location(message):
-    if message.location is not None:
-        coord = str(message.location.longitude) + ',' + str(message.location.latitude)
-        r = requests.get('https://geocode-maps.yandex.ru/1.x/?apikey=4dd7cd0a-35ca-45bc-ac71-fb8f2a9903d3&kind=locality&format=json&lang=en_US&geocode=' + coord)
-        if len(r.json()['response']['GeoObjectCollection']['featureMember']) > 0:
-            address = \
-            r.json()['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty']['GeocoderMetaData']['text']
-            markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True, row_width=1)
-            YES = types.KeyboardButton('YES')
-            NO = types.KeyboardButton('NO')
-            markup.row(YES, NO)
-            bot.send_message(message.chat.id, 'Your locality:\n{} Do you confirm this ?'.format(address), reply_markup=markup)
-            # types.ReplyKeyboardRemove(selective=False)
-
-    else:
-        bot.send_message(message.chat.id, 'Failed to get your address')
+#@bot.message_handler(content_types=['location'])
+#def location(message):
+#    if message.location is not None:
+#        coord = str(message.location.longitude) + ',' + str(message.location.latitude)
+#        r = requests.get('https://geocode-maps.yandex.ru/1.x/?apikey=4dd7cd0a-35ca-45bc-ac71-fb8f2a9903d3&kind=locality&format=json&lang=en_US&geocode=' + coord)
+#        if len(r.json()['response']['GeoObjectCollection']['featureMember']) > 0:
+#            address = \
+#            r.json()['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty']['GeocoderMetaData']['text']
+#            markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True, row_width=1)
+#            YES = types.KeyboardButton('YES')
+#            NO = types.KeyboardButton('NO')
+#            markup.row(YES, NO)
+#            bot.send_message(message.chat.id, 'Your locality:\n{} Do you confirm this ?'.format(address), reply_markup=markup)
+#            # types.ReplyKeyboardRemove(selective=False)
+#
+#    else:
+#        bot.send_message(message.chat.id, 'Failed to get your address')
 
     # БАЗА ДАННЫХ
     db_object.execute(f"SELECT id FROM users WHERE id = {user_id}")
