@@ -275,7 +275,7 @@ def chek_callback_data(callback):
         Join11 = types.InlineKeyboardButton('Вступить в группу', url='https://paywall.pw/8k6mlzrmqjdo')
         back1 = types.InlineKeyboardButton('Назад', callback_data='back1')
         markup_inline.add(Join11, back1)
-        bot.send_message(callback.message.chat.id, "Лучший торговый робот Forex, который сейчас доминирует на рынке. Торговля с использованием стратегии корреляции треугольных пар от Dragon Expert гарантирует, что вы сможете зарабатывать от 70% до 100%++ прибыли в месяц. Самый продвинутый алгоритм реального времени в программном обеспечении EA. Подключайтесь к нашему каналу и скачивайте все необходимые файлы для настройки и запуска бота.", reply_markup=markup_inline
+        bot.send_message(callback.message.chat.id, "Лучший торговый робот Forex, который сейчас доминирует на рынке. Торговля с использованием стратегии корреляции треугольных пар от Dragon Expert гарантирует, что вы сможете зарабатывать от 70% до 100%++ прибыли в месяц. Самый продвинутый алгоритм реального времени в программном обеспечении EA. Подключайтесь к нашему каналу и скачивайте все необходимые файлы для настройки и запуска бота.", reply_markup=markup_inline)
 
 #@bot.message_handler(content_types=['location'])
 #def location(message):
