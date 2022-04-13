@@ -5,7 +5,7 @@ import logging
 from config import *
 from flask import Flask, request
 from telebot import types
-import requests
+#import requests
 
 
 #class LIST:
