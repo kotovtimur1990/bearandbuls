@@ -38,8 +38,8 @@ logger.setLevel(logging.DEBUG)
 def start(message):
     username = message.from_user.username
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-    RUSSKIY = types.KeyboardButton(text="Русский", request_location=True)
-    ANGLISKIY = types.KeyboardButton(text="English", request_location=True)
+    RUSSKIY = types.KeyboardButton(text="Русский")
+    ANGLISKIY = types.KeyboardButton(text="English")
     markup.row(RUSSKIY)
     markup.row(ANGLISKIY)
     bot.reply_to(message, f"Hello, {username}!\n \n \n Выберите язык / Choose language", reply_markup=markup)
